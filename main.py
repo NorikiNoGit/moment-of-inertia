@@ -28,7 +28,10 @@ def plot_sine_waves(w_values):
         dydt_sum_list.append(dy_dt_sum)
 
     plt.tight_layout()
+    plt.savefig('sins.png')
     plt.show()
+    
+
     plot_ysum(w_values, y_sum_list)
     print('w_walues:', w_values)
     print('dydt_sum_list:', dydt_sum_list)
@@ -40,14 +43,17 @@ def plot_ysum(w_values, y_sum_list):
     plt.ylim(0, 3000)
     plt.xlabel('w')
     plt.ylabel('sum(y^2)')
+    plt.savefig('y^2_sum.png')
     plt.show()
-
+    
 def plot_dydtsum(w_values, dydt_sum_list):
     plt.scatter(w_values, dydt_sum_list)
     plt.grid(True)
     plt.xlabel('w')
     plt.ylabel("sum|y'|")
+    plt.savefig("sum|y'|.png")
     plt.show()
+    
 
 # 使用例
 plot_sine_waves([5, 10, 50, 100, 110, 150, 200])
